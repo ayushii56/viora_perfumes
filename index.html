@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Premium SEO Tags -->
+  <title>VIORA | Premium Haute Fragrance & Perfume House</title>
+  <meta name="description" content="Explore VIORA Haute Fragrance. Far Enough to Feel. Close Enough to Linger. Discover our signature perfume collections, interactive scent finder quiz, and luxurious packaging rituals.">
+  <meta name="keywords" content="viora, luxury perfume, haute fragrance, niche fragrance, tom ford, le labo, byredo, luxury perfume brand">
+  <meta name="author" content="VIORA">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext y='70' font-family='serif' font-size='60' fill='%23c5a880'%3EV%3C/text%3E%3C/svg%3E">
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Style Connection -->
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-logo">V I O R A</div>
+    <div class="preloader-line"></div>
+  </div>
+
+  <!-- Cinematic Film Grain Overlay -->
+  <div class="film-grain"></div>
+
+  <!-- Custom Cinematic Glowing Cursor -->
+  <div class="custom-cursor" id="custom-cursor"></div>
+  <div class="custom-cursor-glow" id="custom-cursor-glow"></div>
+
+  <!-- Background Canvas Container for Smoke Particles -->
+  <div class="canvas-container">
+    <canvas id="smoke-canvas"></canvas>
+  </div>
+
+  <!-- Transparent Floating Navbar -->
+  <nav class="navbar glass-panel" id="navbar">
+    <a href="#" class="nav-brand">V I O R A<span>.</span></a>
+    
+    <ul class="nav-links">
+      <li><a href="#collection" class="nav-link">Collection</a></li>
+      <li><a href="#story" class="nav-link">Our Story</a></li>
+      <li><a href="#experience" class="nav-link">Scent Experience</a></li>
+      <li><a href="#best-seller" class="nav-link">Spotlight</a></li>
+      <li><a href="#quiz" class="nav-link">Scent Finder</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Search Trigger -->
+      <button class="nav-btn" id="search-toggle-btn" aria-label="Search">
+        <i data-lucide="search" style="width: 18px; height: 18px;"></i>
+      </button>
+      
+      <!-- Theme Toggle -->
+      <button class="nav-btn" id="theme-toggle-btn" aria-label="Toggle Theme">
+        <i data-lucide="moon" id="theme-icon" style="width: 18px; height: 18px;"></i>
+      </button>
+
+      <!-- Wishlist Toggle -->
+      <button class="nav-btn" id="wishlist-toggle-btn" aria-label="Wishlist">
+        <i data-lucide="heart" style="width: 18px; height: 18px;"></i>
+        <span class="nav-badge" id="wishlist-count">0</span>
+      </button>
+
+      <!-- Cart Toggle -->
+      <button class="nav-btn" id="cart-toggle-btn" aria-label="Shopping Cart">
+        <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+        <span class="nav-badge" id="cart-count">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Fullscreen Cinematic Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-lighting"></div>
+    
+    <div class="hero-content">
+      <span class="hero-subtitle">V I O R A  P A R I S</span>
+      <h1 class="hero-title">Far Enough to Feel.</h1>
+      <p class="hero-tagline">“Close Enough to Linger.”</p>
+      
+      <div class="hero-ctas">
+        <a href="#collection" class="btn btn-primary">Explore Fragrances</a>
+        <a href="#story" class="btn btn-secondary">Discover the Story</a>
+      </div>
+    </div>
+
+    <!-- Centered Perfume Bottle Rotation/Tilt Wrap -->
+    <div class="hero-bottle-wrap">
+      <img src="/src/assets/viora_midnight.png" alt="VIORA Midnight Silhouette" class="hero-bottle" id="hero-bottle">
+    </div>
+  </header>
+
+  <!-- Signature Fragrance Collection -->
+  <section class="section container" id="collection">
+    <div class="section-hdr reveal">
+      <span class="section-subtitle">The Palette of Memories</span>
+      <h2 class="section-title">Signature Fragrance Collection</h2>
+    </div>
+
+    <div class="collection-grid">
+      <!-- Fragrance Card: Midnight -->
+      <div class="fragrance-card glass-panel reveal" data-scent="midnight">
+        <img src="/src/assets/viora_midnight.png" alt="Midnight Perfume" class="fragrance-card-bg">
+        <span class="fragrance-tag">Midnight</span>
+        <div class="fragrance-card-content">
+          <h3 class="fragrance-name">Midnight</h3>
+          <p class="fragrance-desc">Intimate, smoky pepper melting into deep obsidian cedarwood.</p>
+          
+          <div class="notes-container">
+            <div class="note-item">
+              <span class="note-label">Top</span>
+              <span class="note-value">Black Pepper</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Heart</span>
+              <span class="note-value">Obsidian Cedar</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Base</span>
+              <span class="note-value">Dark Vanilla</span>
+            </div>
+          </div>
+
+          <div class="fragrance-actions">
+            <button class="fragrance-btn fragrance-btn-primary quick-add-btn" data-id="midnight" data-name="Midnight" data-price="185">Quick Add — $185</button>
+            <button class="fragrance-btn fragrance-btn-secondary view-story-btn" data-id="midnight">Scent Story</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fragrance Card: Velvet -->
+      <div class="fragrance-card glass-panel reveal" data-scent="velvet">
+        <img src="/src/assets/viora_velvet.png" alt="Velvet Perfume" class="fragrance-card-bg">
+        <span class="fragrance-tag">Velvet</span>
+        <div class="fragrance-card-content">
+          <h3 class="fragrance-name">Velvet</h3>
+          <p class="fragrance-desc">A sensual embrace of luxury damask rose laced with golden oud.</p>
+          
+          <div class="notes-container">
+            <div class="note-item">
+              <span class="note-label">Top</span>
+              <span class="note-value">Damask Rose</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Heart</span>
+              <span class="note-value">Golden Amber</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Base</span>
+              <span class="note-value">Sensual Oud</span>
+            </div>
+          </div>
+
+          <div class="fragrance-actions">
+            <button class="fragrance-btn fragrance-btn-primary quick-add-btn" data-id="velvet" data-name="Velvet" data-price="195">Quick Add — $195</button>
+            <button class="fragrance-btn fragrance-btn-secondary view-story-btn" data-id="velvet">Scent Story</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fragrance Card: Ember -->
+      <div class="fragrance-card glass-panel reveal" data-scent="ember">
+        <img src="/src/assets/viora_velvet.png" alt="Ember Perfume" class="fragrance-card-bg" style="filter: hue-rotate(-20deg) saturate(1.2) contrast(1.1) brightness(0.65);">
+        <span class="fragrance-tag">Ember</span>
+        <div class="fragrance-card-content">
+          <h3 class="fragrance-name">Ember</h3>
+          <p class="fragrance-desc">Warm, toasted saffron wrapped in sweet, lingering tobacco leaves.</p>
+          
+          <div class="notes-container">
+            <div class="note-item">
+              <span class="note-label">Top</span>
+              <span class="note-value">Toasted Saffron</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Heart</span>
+              <span class="note-value">Tobacco Leaf</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Base</span>
+              <span class="note-value">Sandalwood</span>
+            </div>
+          </div>
+
+          <div class="fragrance-actions">
+            <button class="fragrance-btn fragrance-btn-primary quick-add-btn" data-id="ember" data-name="Ember" data-price="190">Quick Add — $190</button>
+            <button class="fragrance-btn fragrance-btn-secondary view-story-btn" data-id="ember">Scent Story</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fragrance Card: Eclipse -->
+      <div class="fragrance-card glass-panel reveal" data-scent="eclipse">
+        <img src="/src/assets/viora_midnight.png" alt="Eclipse Perfume" class="fragrance-card-bg" style="filter: hue-rotate(180deg) saturate(0.5) brightness(0.55);">
+        <span class="fragrance-tag">Eclipse</span>
+        <div class="fragrance-card-content">
+          <h3 class="fragrance-name">Eclipse</h3>
+          <p class="fragrance-desc">An intense shadow of dry patchouli illuminated by cosmic iris.</p>
+          
+          <div class="notes-container">
+            <div class="note-item">
+              <span class="note-label">Top</span>
+              <span class="note-value">Cosmic Iris</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Heart</span>
+              <span class="note-value">Raw Leather</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Base</span>
+              <span class="note-value">Dry Patchouli</span>
+            </div>
+          </div>
+
+          <div class="fragrance-actions">
+            <button class="fragrance-btn fragrance-btn-primary quick-add-btn" data-id="eclipse" data-name="Eclipse" data-price="205">Quick Add — $205</button>
+            <button class="fragrance-btn fragrance-btn-secondary view-story-btn" data-id="eclipse">Scent Story</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fragrance Card: Solace -->
+      <div class="fragrance-card glass-panel reveal" data-scent="solace">
+        <img src="/src/assets/viora_midnight.png" alt="Solace Perfume" class="fragrance-card-bg" style="filter: saturate(0) brightness(1.1) contrast(1.1) opacity(0.8);">
+        <span class="fragrance-tag">Solace</span>
+        <div class="fragrance-card-content">
+          <h3 class="fragrance-name">Solace</h3>
+          <p class="fragrance-desc">Serene cashmere wood drifting lightly over sparkling bergamot.</p>
+          
+          <div class="notes-container">
+            <div class="note-item">
+              <span class="note-label">Top</span>
+              <span class="note-value">Bergamot</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Heart</span>
+              <span class="note-value">Cashmere Wood</span>
+            </div>
+            <div class="note-item">
+              <span class="note-label">Base</span>
+              <span class="note-value">White Musk</span>
+            </div>
+          </div>
+
+          <div class="fragrance-actions">
+            <button class="fragrance-btn fragrance-btn-primary quick-add-btn" data-id="solace" data-name="Solace" data-price="180">Quick Add — $180</button>
+            <button class="fragrance-btn fragrance-btn-secondary view-story-btn" data-id="solace">Scent Story</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Brand Story Section -->
+  <section class="section story-section" id="story">
+    <div class="container story-layout">
+      <!-- Story visuals -->
+      <div class="story-visuals reveal">
+        <div class="story-glow"></div>
+        <div class="story-img-wrap">
+          <img src="/src/assets/viora_packaging.png" alt="VIORA Scent Bottle Detail" class="story-img">
+        </div>
+        <div class="story-badge glass-panel">
+          <span class="story-badge-number">1982</span>
+          <span class="story-badge-label">Est. Paris</span>
+        </div>
+      </div>
+
+      <!-- Story textual contents -->
+      <div class="story-content reveal">
+        <span class="section-subtitle">Sensual Presences</span>
+        <blockquote class="story-quote">“Some fragrances shout. VIORA stays.”</blockquote>
+        <p class="story-desc">
+          VIORA represents the poetry of proximity. Founded under the philosophy that memory is inextricably tied to smell, our master perfumers distill feelings of attraction, warm distance, and unforgettable presence into glass bottles.
+        </p>
+        <p class="story-desc">
+          We craft niche fragrances using absolute oils harvested responsibly, aged with patience, and hand-poured in premium, heavy-weight glass silhouettes. We design scents not for the room, but for the skin.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Perfume Scent Experience & Audio Visualizer -->
+  <section class="section container interactive-scent-section" id="experience">
+    <div class="section-hdr reveal">
+      <span class="section-subtitle">Visual Atmosphere</span>
+      <h2 class="section-title">Atmospheric Scent Experience</h2>
+    </div>
+
+    <div class="interactive-scent-wrapper reveal">
+      <!-- Scent Canvas Dashboard -->
+      <div class="scent-visualizer-box glass-panel" id="soundwave-glow-container">
+        <!-- Canvas for wave animations -->
+        <canvas id="visualizer-canvas"></canvas>
+        <div class="visualizer-overlay"></div>
+        
+        <!-- Live Bottle Preview -->
+        <div class="visualizer-bottle-container" id="visualizer-bottle-container">
+          <img src="/src/assets/viora_midnight.png" alt="VIORA Experience Bottle" class="visualizer-bottle" id="visualizer-glow-bottle">
+          <img src="/src/assets/viora_midnight.png" alt="Reflection" class="visualizer-bottle-reflection" id="visualizer-glow-reflection">
+        </div>
+      </div>
+
+      <!-- Selectors list changing theme & waves -->
+      <div class="interactive-scent-selectors">
+        <div class="selector-option glass-panel active" data-visual-scent="midnight" data-glow-color="rgba(80, 50, 160, 0.45)">
+          <div class="selector-info">
+            <h4>Midnight Aura</h4>
+            <p>Sparks a rhythmic, dark blue glowing pulse & velvet haze</p>
+          </div>
+          <span class="selector-trigger">Calibrate <i data-lucide="chevron-right" style="width: 14px; height: 14px; vertical-align: middle;"></i></span>
+        </div>
+
+        <div class="selector-option glass-panel" data-visual-scent="velvet" data-glow-color="rgba(180, 40, 60, 0.45)">
+          <div class="selector-info">
+            <h4>Velvet Aura</h4>
+            <p>Generates warm rose waves & a deep glowing burgundy fog</p>
+          </div>
+          <span class="selector-trigger">Calibrate <i data-lucide="chevron-right" style="width: 14px; height: 14px; vertical-align: middle;"></i></span>
+        </div>
+
+        <div class="selector-option glass-panel" data-visual-scent="ember" data-glow-color="rgba(212, 130, 50, 0.45)">
+          <div class="selector-info">
+            <h4>Ember Aura</h4>
+            <p>Fires floating gold dust particles & sharp heat ripples</p>
+          </div>
+          <span class="selector-trigger">Calibrate <i data-lucide="chevron-right" style="width: 14px; height: 14px; vertical-align: middle;"></i></span>
+        </div>
+
+        <div class="selector-option glass-panel" data-visual-scent="solace" data-glow-color="rgba(240, 240, 240, 0.35)">
+          <div class="selector-info">
+            <h4>Solace Aura</h4>
+            <p>Creates soft, translucent drifting clouds & peaceful ivory light</p>
+          </div>
+          <span class="selector-trigger">Calibrate <i data-lucide="chevron-right" style="width: 14px; height: 14px; vertical-align: middle;"></i></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Seller Showcase (Spotlight & Lens Tracking) -->
+  <section class="section best-seller-section" id="best-seller">
+    <div class="container reveal">
+      <div class="section-hdr">
+        <span class="section-subtitle">Exquisite Icon</span>
+        <h2 class="section-title">The Best Seller: Midnight 100ml</h2>
+      </div>
+
+      <!-- Spotlight interactive frame -->
+      <div class="spotlight-container glass-panel" id="spotlight-frame">
+        <div class="spotlight-lens" id="spotlight-lens"></div>
+        <img src="/src/assets/viora_midnight.png" alt="Midnight Bottle" class="spotlight-bottle" id="spotlight-bottle">
+
+        <!-- Info hover card left -->
+        <div class="spotlight-card spotlight-card-left glass-panel">
+          <h4>Hand-Cut Obsidian Glass</h4>
+          <p>Each container is sculpted from custom darkened borosilicate glass, retaining absolute oil purity.</p>
+          <span class="price">$185</span>
+        </div>
+
+        <!-- Info hover card right -->
+        <div class="spotlight-card spotlight-card-right glass-panel">
+          <h4>Sillage and Presence</h4>
+          <p>An average presence metric of 12+ hours on skin. Calibrated specifically to match skin lipids.</p>
+          <button class="btn btn-primary quick-add-btn" data-id="midnight" data-name="Midnight" data-price="185" style="width: 100%; padding: 12px 0;">Purchase</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premium Matte Packaging Experience -->
+  <section class="section container" id="packaging">
+    <div class="section-hdr reveal">
+      <span class="section-subtitle">Tactile Aesthetics</span>
+      <h2 class="section-title">The Packaging Experience</h2>
+    </div>
+
+    <div class="packaging-cards">
+      <!-- Step 1 Card -->
+      <div class="packaging-card glass-panel reveal">
+        <img src="/src/assets/viora_packaging.png" alt="Matte Box" class="packaging-card-bg">
+        <div class="packaging-content">
+          <span class="packaging-step">Phase I</span>
+          <h3 class="packaging-title">Magnetic Silhouette</h3>
+          <p class="packaging-desc">A heavy-weight, linen-textured matte black box utilizing hidden high-gauge magnetic closures for a tight tactile sealing sound.</p>
+        </div>
+      </div>
+
+      <!-- Step 2 Card -->
+      <div class="packaging-card glass-panel reveal">
+        <img src="/src/assets/viora_packaging.png" alt="Gold foil detail" class="packaging-card-bg" style="filter: hue-rotate(20deg) brightness(0.6);">
+        <div class="packaging-content">
+          <span class="packaging-step">Phase II</span>
+          <h3 class="packaging-title">Silk & Gold Ribbon</h3>
+          <p class="packaging-desc">The interior reveals a soft gold silk ribbon pull nestled against deep velvet cushion buffers keeping the precious vial floating secure.</p>
+        </div>
+      </div>
+
+      <!-- Step 3 Card -->
+      <div class="packaging-card glass-panel reveal">
+        <img src="/src/assets/viora_packaging.png" alt="Scent Spritz" class="packaging-card-bg" style="filter: grayscale(1) brightness(0.45);">
+        <div class="packaging-content">
+          <span class="packaging-step">Phase III</span>
+          <h3 class="packaging-title">Fine-Mist Spritz</h3>
+          <p class="packaging-desc">Features a customized micro-compression pump designed to deliver a featherlight mist cloud, maximizing top note dispersion upon contact.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI-Inspired Fragrance Quiz Section -->
+  <section class="section quiz-section" id="quiz">
+    <div class="container quiz-container reveal">
+      
+      <!-- Intro screen of the quiz -->
+      <div class="quiz-intro" id="quiz-intro-box">
+        <span class="section-subtitle">Intuitive Search</span>
+        <h2 class="section-title">The Fragrance Finder</h2>
+        <p>Answer four intimate aura queries, and our AI-inspired sensory calculator will recommend your signature VIORA perfume.</p>
+        <button class="btn btn-primary" id="start-quiz-btn">Begin Calibration</button>
+      </div>
+
+      <!-- Interactive Quiz window -->
+      <div class="quiz-window glass-panel" id="quiz-window">
+        <div class="quiz-progress" id="quiz-progress-bar"></div>
+        <span class="quiz-question-num" id="quiz-q-num">Question 1 of 3</span>
+        <h3 class="quiz-question-text" id="quiz-q-text">What mood defines your night?</h3>
+        
+        <div class="quiz-options" id="quiz-options-box">
+          <button class="quiz-option" data-val="mysterious">A quiet library surrounded by candles</button>
+          <button class="quiz-option" data-val="sensual">A rooftop overlooking the bright skyline</button>
+          <button class="quiz-option" data-val="clean">A silent walking path along the beach</button>
+          <button class="quiz-option" data-val="smoky">A dark warm corner near a crackling fireplace</button>
+        </div>
+      </div>
+
+      <!-- Result Screen -->
+      <div class="quiz-result glass-panel" id="quiz-result-box">
+        <span class="section-subtitle">Your Signature Scent is</span>
+        <img src="/src/assets/viora_midnight.png" alt="Recommended Bottle" class="quiz-result-bottle" id="quiz-result-img">
+        <h3 id="quiz-result-title">Midnight</h3>
+        <p id="quiz-result-desc">Midnight's heavy cedarwood combined with dark black pepper is the perfect representation of your mysterious, romantic aura.</p>
+        
+        <div style="display: flex; gap: 16px;">
+          <button class="btn btn-primary quick-add-btn" id="quiz-result-buy-btn" data-id="midnight" data-name="Midnight" data-price="185">Purchase — $185</button>
+          <button class="btn btn-secondary" id="quiz-retry-btn">Recalibrate</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Luxury Editorial Testimonials -->
+  <section class="section container testimonials-section">
+    <div class="section-hdr reveal">
+      <span class="section-subtitle">Lingering Whispers</span>
+      <h2 class="section-title">Editorial Reviews</h2>
+    </div>
+
+    <!-- Scroll snapping cards -->
+    <div class="testimonials-slider reveal">
+      
+      <div class="testimonial-card glass-panel">
+        <blockquote class="testimonial-quote">“VIORA does not announce itself upon entry. Instead, it weaves a mysterious story on your collar and lingers long after you leave. Midnight is a masterpiece.”</blockquote>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Elianna Vance</span>
+          <span class="testimonial-tag">Vogue Editorialist</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass-panel">
+        <blockquote class="testimonial-quote">“The packaging alone feels like a luxury high-fashion film. But Velvet's heavy damask rose combined with authentic agarwood is an incredibly sensual skin texture.”</blockquote>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Alastair H.</span>
+          <span class="testimonial-tag">Verified Collector</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card glass-panel">
+        <blockquote class="testimonial-quote">“I sprayed Ember in my car on Tuesday. It is now Friday, and I can still sense the faint, beautiful gold dust of saffron and tobacco. Pure indulgence.”</blockquote>
+        <div class="testimonial-author">
+          <span class="testimonial-name">Camilla Sterling</span>
+          <span class="testimonial-tag">Niche Fragrance Critic</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Newsletter / Inner Scent Circle (Exclusive) -->
+  <section class="section" id="newsletter">
+    <div class="container reveal">
+      <div class="newsletter-box glass-panel">
+        <span class="section-subtitle">Exclusive Access</span>
+        <h2 class="newsletter-title">Enter the Inner Circle</h2>
+        <p class="newsletter-desc">Join the VIORA scent society. Receive bespoke fragrance drop alerts, private unboxing ritual invitations, and curated editorial scent reviews.</p>
+        
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="ENTER YOUR EMAIL ADDRESS" required>
+          <button type="submit" class="btn btn-primary" style="padding: 16px 28px;">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Footer & Socials -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <!-- Column 1 Brand -->
+      <div class="footer-brand-col">
+        <h3>V I O R A</h3>
+        <p>Sensual. Elegant. Mysterious. A bespoke fragrance house dedicated to the memories that linger.</p>
+      </div>
+
+      <!-- Column 2 Links -->
+      <div class="footer-links-col">
+        <h4>Collection</h4>
+        <ul>
+          <li><a href="#collection">Midnight</a></li>
+          <li><a href="#collection">Velvet</a></li>
+          <li><a href="#collection">Ember</a></li>
+          <li><a href="#collection">Eclipse</a></li>
+          <li><a href="#collection">Solace</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 Links -->
+      <div class="footer-links-col">
+        <h4>House</h4>
+        <ul>
+          <li><a href="#story">Our Philosophy</a></li>
+          <li><a href="#story">Ethical Sourcing</a></li>
+          <li><a href="#newsletter">Inner Circle</a></li>
+          <li><a href="#quiz">Fragrance Finder</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 Contact Form -->
+      <div class="footer-links-col">
+        <h4>Connect</h4>
+        <form class="footer-contact-form" id="footer-contact-form">
+          <input type="text" class="footer-input" placeholder="YOUR NAME" required>
+          <input type="email" class="footer-input" placeholder="EMAIL ADDRESS" required>
+          <textarea class="footer-input footer-textarea" placeholder="YOUR INQUIRY" required></textarea>
+          <button type="submit" class="btn btn-primary" style="padding: 10px 0; font-size: 0.65rem;">Send Inquiry</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span class="footer-copy">&copy; 2026 VIORA Haute Fragrances Ltd. All Rights Reserved. Designed for elegance.</span>
+      
+      <!-- Social icons -->
+      <div class="footer-socials">
+        <a href="#" class="footer-social-btn" aria-label="Instagram"><i data-lucide="instagram" style="width: 18px; height: 18px;"></i></a>
+        <a href="#" class="footer-social-btn" aria-label="TikTok"><i data-lucide="music-2" style="width: 18px; height: 18px;"></i></a>
+        <a href="#" class="footer-social-btn" aria-label="Pinterest"><i data-lucide="chrome" style="width: 18px; height: 18px;"></i></a>
+        <a href="#" class="footer-social-btn" aria-label="Twitter"><i data-lucide="twitter" style="width: 18px; height: 18px;"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Shopping Cart Drawer -->
+  <div class="drawer glass-panel" id="cart-drawer">
+    <div class="drawer-hdr">
+      <h3>Your Bag</h3>
+      <button class="drawer-close" id="cart-close-btn" aria-label="Close Bag">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+    <div class="drawer-content" id="cart-drawer-content">
+      <!-- Dynamically filled with javascript -->
+    </div>
+    <div class="drawer-footer" id="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span class="cart-total-label">Subtotal</span>
+        <span class="cart-total-val" id="cart-total-price">$0.00</span>
+      </div>
+      <button class="btn btn-primary" id="checkout-btn" style="width: 100%;">Checkout Security</button>
+    </div>
+  </div>
+
+  <!-- Slide-Out Wishlist Drawer -->
+  <div class="drawer glass-panel" id="wishlist-drawer">
+    <div class="drawer-hdr">
+      <h3>Wishlist</h3>
+      <button class="drawer-close" id="wishlist-close-btn" aria-label="Close Wishlist">
+        <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+      </button>
+    </div>
+    <div class="drawer-content" id="wishlist-drawer-content">
+      <!-- Dynamically filled with javascript -->
+    </div>
+  </div>
+
+  <!-- Drawer Backdrop Overlay -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Product Quick View Modal Frame -->
+  <div class="modal-overlay" id="quickview-overlay">
+    <button class="modal-close" id="quickview-close-btn" aria-label="Close Story">
+      <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+    </button>
+    <div class="quickview-modal glass-panel" id="quickview-card">
+      <div class="quickview-visual">
+        <img src="/src/assets/viora_midnight.png" alt="Quickview Image" class="quickview-img" id="quickview-image">
+      </div>
+      <div class="quickview-details">
+        <div class="quickview-hdr">
+          <span class="quickview-mood" id="quickview-mood">Midnight</span>
+          <h3 class="quickview-title" id="quickview-title">Midnight Scent</h3>
+          <span class="quickview-price" id="quickview-price">$185</span>
+        </div>
+        <p class="quickview-desc" id="quickview-desc">Deeply provocative cedarwood interlocked with smoked black pepper and dark madagascar vanilla orchid extracts.</p>
+        
+        <div class="quickview-notes">
+          <span class="quickview-notes-title">Scent Composition</span>
+          <div class="quickview-notes-grid">
+            <div class="quickview-note">
+              <h5>Top Note</h5>
+              <p id="quickview-note-top">Black Pepper</p>
+            </div>
+            <div class="quickview-note">
+              <h5>Heart Note</h5>
+              <p id="quickview-note-heart">Obsidian Cedar</p>
+            </div>
+            <div class="quickview-note">
+              <h5>Base Note</h5>
+              <p id="quickview-note-base">Dark Vanilla</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="quickview-actions">
+          <button class="btn btn-primary quick-add-btn" id="quickview-add-btn" style="flex: 1;">Add to Bag</button>
+          <button class="btn btn-secondary wishlist-add-btn" id="quickview-wish-btn" style="padding: 16px;"><i data-lucide="heart" style="width: 16px; height: 16px;"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="search-overlay">
+    <button class="modal-close" id="search-close-btn" aria-label="Close Search">
+      <i data-lucide="x" style="width: 20px; height: 20px;"></i>
+    </button>
+    <div class="glass-panel" style="padding: 48px; border-radius: 4px; width: 90%; max-width: 600px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.6);">
+      <h3 style="font-size: 1.8rem; margin-bottom: 24px;">Explore VIORA</h3>
+      <input type="text" id="search-input" class="newsletter-input" placeholder="SEARCH FOR A MOOD OR NOTE..." style="text-align: center; font-size: 1.1rem; padding: 18px 24px; margin-bottom: 20px; width: 100%;">
+      <div id="search-results" style="max-height: 200px; overflow-y: auto; text-align: left; display: flex; flex-direction: column; gap: 12px; margin-top: 10px;">
+        <!-- Search outcomes rendered here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Success Modal Overlay -->
+  <div class="modal-overlay" id="checkout-overlay">
+    <div class="checkout-modal" id="checkout-modal">
+      <div class="checkout-icon">
+        <i data-lucide="check-circle" style="width: 48px; height: 48px;"></i>
+      </div>
+      <h3 class="checkout-title">Secured</h3>
+      <p class="checkout-desc">Your order is calibrated. A confirmation has been wired. Get ready to experience the lingering traces of VIORA.</p>
+      <button class="btn btn-primary" id="checkout-success-close-btn" style="width: 100%;">Return to Boutique</button>
+    </div>
+  </div>
+
+  <!-- Core Javascript Connection -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
