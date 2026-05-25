@@ -82,19 +82,26 @@
     <div class="hero-lighting"></div>
     
     <div class="hero-content">
-      <span class="hero-subtitle">V I O R A  P A R I S</span>
-      <h1 class="hero-title">Far Enough to Feel.</h1>
-      <p class="hero-tagline">“Close Enough to Linger.”</p>
+      <span class="hero-subtitle" style="opacity: 0; transform: translateY(15px); animation: heroFadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.6s;">V I O R A &nbsp; P A R I S</span>
       
-      <div class="hero-ctas">
+      <!-- Central Luxury Gold Monogram Emblem (Fades and scales in) -->
+      <div class="hero-logo-box" style="opacity: 0; transform: scale(0.95); animation: heroFadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 0.8s;">
+        <img src="/src/assets/viora_logo.png" alt="VIORA Luxury Gold Monogram Logo" class="hero-brand-logo" id="hero-bottle">
+      </div>
+
+      <h1 class="hero-brand-title" style="opacity: 0; transform: translateY(20px); animation: heroFadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 1s;">V I O R A</h1>
+      
+      <!-- Unified Tagline on a Single Line, exactly like the image -->
+      <div class="hero-tagline-wrap" style="opacity: 0; transform: translateY(20px); animation: heroFadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.2s;">
+        <span class="tagline-line-left"></span>
+        <p class="hero-tagline-single">Close Enough to Feel. Far Enough to Linger.</p>
+        <span class="tagline-line-right"></span>
+      </div>
+      
+      <div class="hero-ctas" style="margin-top: 40px; opacity: 0; transform: translateY(15px); animation: heroFadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.5s;">
         <a href="#collection" class="btn btn-primary">Explore Fragrances</a>
         <a href="#story" class="btn btn-secondary">Discover the Story</a>
       </div>
-    </div>
-
-    <!-- Centered Perfume Bottle Rotation/Tilt Wrap -->
-    <div class="hero-bottle-wrap">
-      <img src="/src/assets/viora_midnight.png" alt="VIORA Midnight Silhouette" class="hero-bottle" id="hero-bottle">
     </div>
   </header>
 

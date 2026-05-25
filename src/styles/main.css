@@ -399,27 +399,73 @@ a {
   animation: heroFadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards 1s;
 }
 
-.hero-title {
-  font-size: clamp(3.5rem, 8vw, 6rem);
-  font-family: var(--font-serif);
-  line-height: 1.1;
-  margin-bottom: 16px;
-  font-weight: 300;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  opacity: 0;
-  transform: translateY(30px);
-  animation: heroFadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.2s;
+.hero-logo-box {
+  margin-bottom: 24px;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: logoSubtleSway 8s ease-in-out infinite alternate;
 }
 
-.hero-tagline {
+.hero-brand-logo {
+  width: clamp(140px, 20vw, 190px);
+  height: auto;
+  filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.85));
+  transform-origin: center center;
+}
+
+@keyframes logoSubtleSway {
+  0% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.hero-brand-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  line-height: 1;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  text-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+.hero-tagline-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.tagline-line-left,
+.tagline-line-right {
+  height: 1px;
+  flex: 1;
+  max-width: 100px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold));
+  opacity: 0.8;
+}
+
+.tagline-line-right {
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+}
+
+.hero-tagline-single {
+  font-family: var(--font-serif);
+  font-size: clamp(0.85rem, 2.5vw, 1.3rem);
   font-style: italic;
+  letter-spacing: 0.08em;
   color: var(--text-secondary);
-  margin-bottom: 48px;
-  opacity: 0;
-  transform: translateY(25px);
-  animation: heroFadeInUp 1.5s cubic-bezier(0.25, 1, 0.5, 1) forwards 1.5s;
+  white-space: nowrap;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
 .hero-ctas {
